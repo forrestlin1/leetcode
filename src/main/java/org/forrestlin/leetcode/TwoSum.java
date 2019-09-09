@@ -11,7 +11,12 @@ import java.util.Map;
  */
 public class TwoSum {
 
-
+    /**
+     * 1.空间换时间
+     * 遍历一遍数组
+     * 将{num,i}存到map里面
+     * 遍历的时候get(target-当前num)，获取得到则满足要求
+     */
     public int[] twoSum(int[] nums, int target) {
 
         if (nums == null || nums.length == 0) {
@@ -35,6 +40,10 @@ public class TwoSum {
 
     }
 
+    /**
+     * 2.暴力解法
+     * 双层循环判断
+     */
     public int[] twoSum2(int[] nums, int target) {
 
         if (nums == null || nums.length == 0) {
