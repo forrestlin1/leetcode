@@ -17,7 +17,7 @@ import java.util.Map;
  * 输入: [1,8,6,2,5,4,8,3,7]
  * 输出: 49
  */
-public class ContainerWithMostWater {
+public class L11ContainerWithMostWater {
 
     public static void main(String[] args) {
 

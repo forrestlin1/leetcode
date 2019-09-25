@@ -19,7 +19,7 @@ package org.forrestlin.leetcode;
  *
  * 则中位数是 2.0
  */
-public class MedianOfTwoSortedArrays {
+public class L4MedianOfTwoSortedArrays {
 
     public static void main(String[] args) {
 

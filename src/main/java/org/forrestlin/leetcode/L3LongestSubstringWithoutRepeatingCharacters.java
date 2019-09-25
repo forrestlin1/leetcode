@@ -20,7 +20,7 @@ import java.util.Set;
  * 输出: 3
  * 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
  */
-public class LongestSubstringWithoutRepeatingCharacters {
+public class L3LongestSubstringWithoutRepeatingCharacters {
 
     public static void main(String[] args) {
         String a = "abcabcbb";

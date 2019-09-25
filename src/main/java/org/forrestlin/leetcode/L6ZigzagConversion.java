@@ -42,7 +42,7 @@ import java.util.stream.Collectors;
  * TO
  * C
  */
-public class ZigzagConversion {
+public class L6ZigzagConversion {
 
     public static void main(String[] args) {
 /**

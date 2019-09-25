@@ -27,10 +27,10 @@ import java.util.Set;
  * [-1, -1, 2]
  * ]
  */
-public class ThreeSum {
+public class L15ThreeSum {
 
     public static void main(String[] args) {
-        ThreeSum t = new ThreeSum();
+        L15ThreeSum t = new L15ThreeSum();
         t.threeSum(new int[]{-1, 0, 1});
 
     }
