@@ -8,6 +8,10 @@ package org.forrestlin.leetcode;
  */
 public class L21MergeTwoSortedLists {
 
+    /**
+     * 迭代法
+     * 这里还可以考虑用递归
+     * */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
