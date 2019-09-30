@@ -1,16 +1,12 @@
-package org.forrestlin.leetcode;
+package org.forrestlin.leetcode.algorithm;
 
 /**
  * @program: leetcode
- * @description: main
+ * @description: 二分查找
  * @author: forrestlin
- * @create: 2019-09-09 15:11
+ * @create: 2019-09-30 11:51
  */
-public class Main {
-
-    public static void main(String[] args) {
-        System.out.println(binarySearch1(new int[]{0, 1, 1, 1, 2, 3, 5, 7, 8}, 1));
-    }
+public class BinarySearch {
 
     //标准二分查找 left_bound
     //整个过程为low向目标逼近的过程
@@ -28,6 +24,7 @@ public class Main {
             if (target > nums[mid]) {
                 low = mid + 1;
             }
+            //这里等于的时候也-1，这样low才能往左移，匹配到第一个
             if (target <= nums[mid]) {
                 high = mid - 1;
             }
@@ -70,6 +67,4 @@ public class Main {
         return -1;
     }
 
-
 }
-

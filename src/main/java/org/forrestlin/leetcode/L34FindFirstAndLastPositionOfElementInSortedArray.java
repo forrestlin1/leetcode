@@ -6,7 +6,7 @@ package org.forrestlin.leetcode;
  * @author: forrestlin
  * @create: 2019-09-29 20:08
  */
-public class L34 {
+public class L34FindFirstAndLastPositionOfElementInSortedArray {
 
     public int[] searchRange(int[] nums, int target) {
         if (null == nums || 0 == nums.length) {
@@ -38,7 +38,7 @@ public class L34 {
         }
     }
 
-    //标准二分查找
+    //标准二分查找 left_bound
     //整个过程为low向目标逼近的过程
     //如果数组中存在目标，则返回目标的第一个下标
     //如果数组中不存在目标，则返回第一个大于目标的下标（可能溢出）
