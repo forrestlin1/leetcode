@@ -76,13 +76,3 @@ public class L2AddTwoNums {
         return lh.next;
     }
 }
-
-class ListNode {
-
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
