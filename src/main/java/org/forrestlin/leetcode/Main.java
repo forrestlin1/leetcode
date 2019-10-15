@@ -1,5 +1,9 @@
 package org.forrestlin.leetcode;
 
+import java.util.Comparator;
+import java.util.Date;
+import java.util.PriorityQueue;
+
 /**
  * @program: leetcode
  * @description: main
@@ -9,7 +13,26 @@ package org.forrestlin.leetcode;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(binarySearch1(new int[]{0, 1, 1, 1, 2, 3, 5, 7, 8}, 1));
+
+        PriorityQueue<Integer> pq = new PriorityQueue(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1.compareTo(o2) * -1;
+            }
+        });
+        pq.add(0);
+        pq.add(1);
+        pq.add(1);
+        pq.add(2);
+        pq.remove(1);
+
+        while (!pq.isEmpty()) {
+
+            System.out.println(pq.poll());
+
+
+        }
+
     }
 
     //标准二分查找 left_bound
