@@ -14,24 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        PriorityQueue<Integer> pq = new PriorityQueue(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1.compareTo(o2) * -1;
-            }
-        });
-        pq.add(0);
-        pq.add(1);
-        pq.add(1);
-        pq.add(2);
-        pq.remove(1);
-
-        while (!pq.isEmpty()) {
-
-            System.out.println(pq.poll());
-
-
-        }
+        Byte a = 1;
+        Integer b = 1;
+        System.out.println(a.equals(b));
 
     }
 
