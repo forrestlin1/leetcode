@@ -1,8 +1,5 @@
 package org.forrestlin.leetcode;
 
-import java.util.Stack;
-import sun.reflect.generics.tree.Tree;
-
 /*
 *对称二叉树
 * */
