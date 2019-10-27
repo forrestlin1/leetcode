@@ -28,7 +28,6 @@ public class L160IntersectionOfTwoLinkedLists {
             if (cnt != null) {
                 return headB;
             }
-
             headB = headB.next;
 
 
@@ -38,7 +37,8 @@ public class L160IntersectionOfTwoLinkedLists {
 
     }
 
-    /**
+    /***
+     *
      * 先求出A和B的长度，得出他们的长度差，然后使用两个指针同时从离节点一样长的地方开始往前走，判断是否相等，相等即是交叉点
      * <p>
      * 1->2->3->4->5 2->3->4->5
