@@ -1,4 +1,4 @@
-package org.forrestlin.leetcode.algorithm;
+package org.forrestlin.algorithm;
 
 /**
  * @program: leetcode
