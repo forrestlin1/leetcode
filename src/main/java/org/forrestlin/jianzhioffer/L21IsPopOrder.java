@@ -12,13 +12,26 @@ import java.util.Stack;
  */
 public class L21IsPopOrder {
 
+    public static void main(String[] args) {
+        L21IsPopOrder test = new L21IsPopOrder();
+        System.out.println(test.IsPopOrder(new int[]{1, 2, 3, 4, 5}, new int[]{4, 5, 3, 2, 1}));
+    }
+
     public boolean IsPopOrder(int[] pushA, int[] popA) {
 
         Stack<Integer> stack = new Stack<>();
+        int popCur = 0;
         for (int i : pushA) {
+            stack.push(i);
+            while (!stack.isEmpty() && stack.peek() == popA[popCur]) {
+                stack.pop();
+                popCur++;
+            }
 
         }
-
+        if (stack.isEmpty() && popCur == popA.length - 1) {
+            return true;
+        }
         return false;
     }
 
