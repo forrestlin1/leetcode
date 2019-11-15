@@ -1,6 +1,7 @@
 package org.forrestlin.jianzhioffer;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @program: leetcode
@@ -13,7 +14,58 @@ import java.util.ArrayList;
  */
 public class L24FindPath {
 
+    public static void main(String[] args) {
+        L24FindPath test = new L24FindPath();
+        TreeNode head = new TreeNode(10);
+        head.left = new TreeNode(5);
+        head.right = new TreeNode(12);
+        head.left.left = new TreeNode(4);
+        head.left.right = new TreeNode(7);
+        System.out.println(test.FindPath(head, 22));
+    }
+
+    ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
+        backTrace(root, new ArrayList<>(), target);
+
+        Collections.sort(res, (a, b) -> {
+            if (a.size() > b.size()) {
+                return -1;
+            } else {
+                return 1;
+            }
+        });
+        return res;
+    }
+
+    private void backTrace(TreeNode node, ArrayList<Integer> path, int target) {
+        //到叶子节点了
+        if (null == node) {
+            return;
+
+        } else {
+            ArrayList<Integer> newPath = new ArrayList<>(path);
+            newPath.add(node.val);
+            if (node.left != null) {
+                backTrace(node.left, newPath, target);
+
+            }
+            if (node.right != null) {
+
+                backTrace(node.right, newPath, target);
+            }
+            if (null == node.left && null == node.right) {
+                int sum = 0;
+                for (Integer val : newPath) {
+                    sum += val;
+                }
+                if (target == sum) {
+                    res.add(new ArrayList<>(newPath));
+                }
+            }
+
+        }
 
     }
 }
