@@ -41,12 +41,12 @@ public class L146LruCache {
 
 }
 
-class Node {
+class CacheNode {
 
     public int key, val;
-    public Node next, prev;
+    public CacheNode next, prev;
 
-    public Node(int k, int v) {
+    public CacheNode(int k, int v) {
         this.key = k;
         this.val = v;
     }
@@ -59,7 +59,7 @@ class Node {
 class LRUCache1 {
 
     // key -> Node(key, val)
-    private HashMap<Integer, Node> map;
+    private HashMap<Integer, CacheNode> map;
     // Node(k1, v1) <-> Node(k2, v2)...
     private DoubleList cache;
     // 最大容量
@@ -83,7 +83,7 @@ class LRUCache1 {
 
     public void put(int key, int val) {
         // 先把新节点 x 做出来
-        Node x = new Node(key, val);
+        CacheNode x = new CacheNode(key, val);
 
         if (map.containsKey(key)) {
             // 删除旧的节点，新的插到头部
@@ -94,7 +94,7 @@ class LRUCache1 {
         } else {
             if (cap == cache.size()) {
                 // 删除链表最后一个数据
-                Node last = cache.removeLast();
+                CacheNode last = cache.removeLast();
                 map.remove(last.key);
             }
             // 直接添加到头部
@@ -107,19 +107,19 @@ class LRUCache1 {
 
 class DoubleList {
 
-    private Node head, tail; // 头尾虚节点
+    private CacheNode head, tail; // 头尾虚节点
     private int size; // 链表元素数
 
     public DoubleList() {
-        head = new Node(0, 0);
-        tail = new Node(0, 0);
+        head = new CacheNode(0, 0);
+        tail = new CacheNode(0, 0);
         head.next = tail;
         tail.prev = head;
         size = 0;
     }
 
     // 在链表头部添加节点 x
-    public void addFirst(Node x) {
+    public void addFirst(CacheNode x) {
         x.next = head.next;
         x.prev = head;
         head.next.prev = x;
@@ -128,18 +128,18 @@ class DoubleList {
     }
 
     // 删除链表中的 x 节点（x 一定存在）
-    public void remove(Node x) {
+    public void remove(CacheNode x) {
         x.prev.next = x.next;
         x.next.prev = x.prev;
         size--;
     }
 
     // 删除链表中最后一个节点，并返回该节点
-    public Node removeLast() {
+    public CacheNode removeLast() {
         if (tail.prev == head) {
             return null;
         }
-        Node last = tail.prev;
+        CacheNode last = tail.prev;
         remove(last);
         return last;
     }
