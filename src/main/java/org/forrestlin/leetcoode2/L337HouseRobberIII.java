@@ -1,7 +1,5 @@
 package org.forrestlin.leetcoode2;
 
-import org.forrestlin.leetcode.TreeNode;
-
 /*
  * 打家劫舍3
  * */

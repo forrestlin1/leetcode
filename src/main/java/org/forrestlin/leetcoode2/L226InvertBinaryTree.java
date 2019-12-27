@@ -2,7 +2,6 @@ package org.forrestlin.leetcoode2;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import org.forrestlin.leetcode.TreeNode;
 
 /*
  * 翻转二叉树

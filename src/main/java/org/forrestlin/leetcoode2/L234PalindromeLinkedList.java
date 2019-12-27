@@ -1,7 +1,5 @@
 package org.forrestlin.leetcoode2;
 
-import org.forrestlin.leetcode.ListNode;
-
 /*
  *回文链表
  * */

@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import org.forrestlin.leetcode.TreeNode;
 
 /**
  * @program: leetcode
@@ -18,14 +17,10 @@ public class L236LowestCommonAncestorOfABinaryTree {
 
     /**
      * 这类树的题目，往往对左右子树递归的调用函数，大部分情况得到局部的解。然后通过左子树解，右子树解，以及根节点来构造出整棵树的解。
-     *
-     * 如果p或者q其中一个是root,那么,p和q的最近公共祖先就是root
-     * 如果root是空,即root是None,那么,返回None,把这个和(1)结合来看,这种情况也是返回root
-     * 如果p和q分别位于二叉树的根节点的左子树和右子树,则他们的最近公共祖先也是root
-     * 如果p和q都位于二叉树的某一边的子树,则需要去那个子树上寻找他们的最近公共祖先(去左子树或者右子树去寻找)
-     * 以上,是一个明显的递归描述
-     *
-     * */
+     * <p>
+     * 如果p或者q其中一个是root,那么,p和q的最近公共祖先就是root 如果root是空,即root是None,那么,返回None,把这个和(1)结合来看,这种情况也是返回root 如果p和q分别位于二叉树的根节点的左子树和右子树,则他们的最近公共祖先也是root
+     * 如果p和q都位于二叉树的某一边的子树,则需要去那个子树上寻找他们的最近公共祖先(去左子树或者右子树去寻找) 以上,是一个明显的递归描述
+     */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {
             return root;
@@ -42,7 +37,7 @@ public class L236LowestCommonAncestorOfABinaryTree {
 
     /**
      * bfs,把所有节点对应的父节点记录下来，然后找p和q的公共父节点
-     * */
+     */
     public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
 
         // Stack for tree traversal
@@ -81,8 +76,9 @@ public class L236LowestCommonAncestorOfABinaryTree {
 
         // The first ancestor of q which appears in
         // p's ancestor set() is their lowest common ancestor.
-        while (!ancestors.contains(q))
+        while (!ancestors.contains(q)) {
             q = parent.get(q);
+        }
         return q;
     }
 
