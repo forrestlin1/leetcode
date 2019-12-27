@@ -1,7 +1,6 @@
-package org.forrestlin.leetcode;
+package org.forrestlin.leetcoode2;
 
 import java.util.LinkedList;
-import java.util.Stack;
 
 /*
  * 字符串解码

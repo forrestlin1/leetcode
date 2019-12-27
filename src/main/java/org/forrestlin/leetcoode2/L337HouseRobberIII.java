@@ -1,7 +1,6 @@
-package org.forrestlin.leetcode;
+package org.forrestlin.leetcoode2;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import org.forrestlin.leetcode.TreeNode;
 
 /*
  * 打家劫舍3
