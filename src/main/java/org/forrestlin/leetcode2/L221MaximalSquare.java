@@ -1,4 +1,4 @@
-package org.forrestlin.leetcoode2;
+package org.forrestlin.leetcode2;
 
 /**
  * @program: leetcode

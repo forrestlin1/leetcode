@@ -1,4 +1,4 @@
-package org.forrestlin.leetcoode2;
+package org.forrestlin.leetcode2;
 
 import java.util.ArrayList;
 import java.util.List;
