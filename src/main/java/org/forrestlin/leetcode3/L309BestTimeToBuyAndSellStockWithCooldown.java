@@ -1,4 +1,4 @@
-package org.forrestlin.leetcode2;
+package org.forrestlin.leetcode3;
 
 /*
  * 最佳买卖股票时机含冷冻期

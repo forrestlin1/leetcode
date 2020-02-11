@@ -1,4 +1,4 @@
-package org.forrestlin.leetcode;
+package org.forrestlin.leetcode2;
 
 import java.util.LinkedList;
 

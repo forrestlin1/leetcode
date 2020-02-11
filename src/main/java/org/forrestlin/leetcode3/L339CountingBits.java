@@ -1,4 +1,4 @@
-package org.forrestlin.leetcode2;
+package org.forrestlin.leetcode3;
 
 /*
  * 比特位计数

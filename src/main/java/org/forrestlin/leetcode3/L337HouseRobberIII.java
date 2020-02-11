@@ -1,4 +1,7 @@
-package org.forrestlin.leetcode2;
+package org.forrestlin.leetcode3;
+
+
+import org.forrestlin.leetcode_common.TreeNode;
 
 /*
  * 打家劫舍3
