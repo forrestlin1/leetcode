@@ -1,7 +1,6 @@
 package org.forrestlin;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @program: leetcode
@@ -12,12 +11,17 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> tl = new ArrayList<>();
-        tl.add("A");
-        tl.add("A");
-        tl.add("B");
-        System.out.println(tl);
-        tl.remove("A");
-        System.out.println(tl);
+        ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
+        map.put("A", "A");
+        if (true) {
+            System.out.println(1);
+            return;
+        }
+
+        try {
+
+        } finally {
+            System.out.println(2);
+        }
     }
 }
