@@ -23,6 +23,9 @@ public class L60permutationSequence {
      * <p>
      * 当确定了第一位为22之后，我们首先需要做的就是从集合中去掉22，集合中剩下的元素个数就变为了n-1n−1。同时，还要从kk中减去(n-1)!(n−1)!，即只关注第一位为22的排列。
      */
+    /*
+     * 将 n! 种排列分为：n 组，每组有 (n - 1)!个排列，根据k值可以确定是第几组的第几个排列，选取该排列的第1个数字，然后递归从剩余的数字里面选取下一个数字，直到n=1为止。
+     * */
     public String getPermutation(int n, int k) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         StringBuilder res = new StringBuilder("");
