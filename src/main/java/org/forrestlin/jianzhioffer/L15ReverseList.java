@@ -14,10 +14,10 @@ public class L15ReverseList {
         head.next = new ListNode(3);
         head.next.next = new ListNode(2);
         head.next.next.next = new ListNode(1);
-        System.out.println(test.ReverseList(head));
+        System.out.println(test.reverseList(head));
     }
 
-    public ListNode ReverseList(ListNode head) {
+    public ListNode reverseList(ListNode head) {
         if (null == head || null == head.next) {
             return head;
         }
@@ -34,6 +34,30 @@ public class L15ReverseList {
             cur = after;
             after = after.next;
 
+        }
+
+        return cur;
+
+    }
+
+    public ListNode reverseList_bd(ListNode head) {
+        if (null == head || null == head.next) {
+            return head;
+        }
+        ListNode pre = null;
+        ListNode cur = head;
+        ListNode after = head.next;
+        while (cur != null) {
+
+            cur.next = pre;
+
+            if (after == null) {
+                break;
+            }
+
+            pre = cur;
+            cur = after;
+            after = after.next;
         }
 
         return cur;

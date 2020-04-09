@@ -8,39 +8,25 @@ import java.util.stream.Collectors;
  * @program: leetcode
  * @description: Z字变换
  * @author: forrestlin
- * @create: 2019-09-19 15:30
- * 将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。
- *
+ * @create: 2019-09-19 15:30 将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。
+ * <p>
  * 比如输入字符串为 "LEETCODEISHIRING" 行数为 3 时，排列如下：
- *
- * L   C   I   R       i%(n+1) = 0
- * E T O E S I I G     i%(n+1) = 1 ||i%(n+1) = 3
- * E   D   H   N       i%(n+1) = 2
+ * <p>
+ * L   C   I   R       i%(n+1) = 0 E T O E S I I G     i%(n+1) = 1 ||i%(n+1) = 3 E   D   H   N       i%(n+1) = 2
  * 之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如："LCIRETOESIIGEDHN"。
- *
+ * <p>
  * 请你实现这个将字符串进行指定行数变换的函数：
- *
- * string convert(string s, int numRows);
- * 示例 1:
- *
- * 输入: s = "LEETCODEISHIRING", numRows = 3
- * 输出: "LCIRETOESIIGEDHN"
- * 示例 2:
- *
- * 输入: s = "LEETCODEISHIRING", numRows = 4
- * 输出: "LDREOEIIECIHNTSG"
- * 解释:
- *
- * L     D     R       i%(n+2) = 0
- * E   O E   I I       i%(n+2) = 1 ||i%(n+2) = 5
- * E C   I H   N       i%(n+2) = 2 ||i%(n+2) = 4
- * T     S     G       i%(n+2) = 3
- *
- * L      I            i%(2n-2) = 0
- * E    E
- * E  D
- * TO
- * C
+ * <p>
+ * string convert(string s, int numRows); 示例 1:
+ * <p>
+ * 输入: s = "LEETCODEISHIRING", numRows = 3 输出: "LCIRETOESIIGEDHN" 示例 2:
+ * <p>
+ * 输入: s = "LEETCODEISHIRING", numRows = 4 输出: "LDREOEIIECIHNTSG" 解释:
+ * <p>
+ * L     D     R       i%(n+2) = 0 E   O E   I I       i%(n+2) = 1 ||i%(n+2) = 5 E C   I H   N       i%(n+2) = 2 ||i%(n+2) = 4 T     S     G i%(n+2) =
+ * 3
+ * <p>
+ * L      I            i%(2n-2) = 0 E    E E  D TO C
  */
 public class L6ZigzagConversion {
 
@@ -52,6 +38,7 @@ public class L6ZigzagConversion {
  *P    I
  * */
         System.out.println(convert("PAYPALISHIRING", 4));
+        System.out.println(convert_bd("PAYPALISHIRING", 4));
     }
 
 
@@ -87,6 +74,36 @@ public class L6ZigzagConversion {
 
         return res;
 
+
+    }
+
+    public static String convert_bd(String s, int numRows) {
+        if (numRows == 1) {
+            return s;
+        }
+
+        int curRow = 0;
+        //标识接下来是往上一行还是往下一行
+        int goingDown = -1;
+        List<String> tmpRes = new ArrayList<>(numRows);
+        for (int i = 0; i < numRows; i++) {
+            tmpRes.add("");
+
+        }
+
+        for (char c : s.toCharArray()) {
+            String rowString = tmpRes.get(curRow) + c;
+            tmpRes.set(curRow, rowString);
+
+            if (curRow == 0 || curRow == numRows - 1) {
+                goingDown = -1 * goingDown;
+            }
+            curRow += goingDown;
+
+        }
+
+        String res = tmpRes.stream().collect(Collectors.joining());
+        return res;
 
     }
 

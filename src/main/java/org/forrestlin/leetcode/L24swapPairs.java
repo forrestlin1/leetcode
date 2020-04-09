@@ -9,7 +9,11 @@ public class L24swapPairs {
         h.next = new ListNode(2);
         h.next.next = new ListNode(3);
         h.next.next.next = new ListNode(4);
-        System.out.println(test.swapPairs(h));
+        ListNode res = test.swapPairs_bd(h);
+        while (res != null) {
+            System.out.println(res.val);
+            res = res.next;
+        }
     }
 
     public ListNode swapPairs(ListNode head) {
@@ -42,6 +46,19 @@ public class L24swapPairs {
         }
 
         return head.next;
+
+    }
+
+
+    public ListNode swapPairs_bd(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode after = swapPairs_bd(head.next.next);
+        ListNode newHead = head.next;
+        head.next = after;
+        newHead.next = head;
+        return newHead;
 
     }
 }

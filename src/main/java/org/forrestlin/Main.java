@@ -1,5 +1,6 @@
 package org.forrestlin;
 
+import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -11,17 +12,15 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Main {
 
     public static void main(String[] args) {
-        ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
-        map.put("A", "A");
-        if (true) {
-            System.out.println(1);
-            return;
-        }
-
-        try {
-
-        } finally {
-            System.out.println(2);
-        }
+        Random r = new Random();
+        System.out.println(r.nextInt(100));
+        r = new Random();
+        System.out.println(r.nextInt(100));
+        r = new Random();
+        System.out.println(r.nextInt(100));
+        r = new Random();
+        System.out.println(r.nextInt(100));
+        r = new Random();
+        System.out.println(r.nextInt(100));
     }
 }

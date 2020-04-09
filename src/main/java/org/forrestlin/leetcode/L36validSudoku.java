@@ -7,14 +7,9 @@ import java.util.Map;
  * @program: leetcode
  * @description: 有效的数独
  * @author: forrestlin
- * @create: 2019-11-28 16:32
- * 判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。
- *
- * 数字 1-9 在每一行只能出现一次。
- * 数字 1-9 在每一列只能出现一次。
- * 数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
- *
- *
+ * @create: 2019-11-28 16:32 判断一个 9x9 的数独是否有效。只需要根据以下规则，验证已经填入的数字是否有效即可。
+ * <p>
+ * 数字 1-9 在每一行只能出现一次。 数字 1-9 在每一列只能出现一次。 数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。
  */
 public class L36validSudoku {
 
@@ -81,7 +76,7 @@ public class L36validSudoku {
                     return false;
                 }
                 //处理子数独
-                int index = i / 3 * 3 + j / 3;
+                int index = (i / 3) * 3 + j / 3;
                 if (!valid(sub, index, board[i][j] - 48)) {
                     return false;
                 }
