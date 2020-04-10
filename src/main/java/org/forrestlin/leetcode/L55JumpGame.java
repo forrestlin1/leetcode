@@ -27,7 +27,7 @@ public class L55JumpGame {
 
     public static void main(String[] args) {
         L55JumpGame test = new L55JumpGame();
-        System.out.println(test.canJump(new int[]{4, 0, 1, 0, 4}));
+        System.out.println(test.canJump2(new int[]{4, 0, 1, 0, 4}));
     }
 
     /**
@@ -54,6 +54,16 @@ public class L55JumpGame {
 
         }
         return res;
+    }
+
+    public boolean canJump2(int[] nums) {
+        int lastPos = nums.length - 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (i + nums[i] >= lastPos) {
+                lastPos = i;
+            }
+        }
+        return lastPos == 0;
     }
 
 

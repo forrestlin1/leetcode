@@ -16,7 +16,7 @@ public class L66plusOne {
         for (int i = digits.length - 1; i >= 0; i--) {
             digits[i]++;
             digits[i] = digits[i] % 10;
-            //这里提前跳出
+            //这里判断取余10不等于0，则说明加1完成了，如果取余10后等于0,则说明要进位，下一位继续加1
             if (digits[i] != 0) return digits;
         }
         //这里应对的是9999...的情况，加1后直接new一个，在前面补上1就行了

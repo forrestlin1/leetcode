@@ -3,7 +3,7 @@ package org.forrestlin.leetcode;
 /**
  * 寻找峰值
  */
-public class L62findPeakElement {
+public class L162findPeakElement {
 
     public int findPeakElement(int[] nums) {
         for (int i = 0; i < nums.length - 1; i++) {

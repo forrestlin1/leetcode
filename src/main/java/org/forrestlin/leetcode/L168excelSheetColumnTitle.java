@@ -3,7 +3,7 @@ package org.forrestlin.leetcode;
 /**
  * Excel表列名称
  */
-public class L68excelSheetColumnTitle {
+public class L168excelSheetColumnTitle {
 
     public String convertToTitle(int n) {
 

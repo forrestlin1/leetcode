@@ -5,12 +5,12 @@ import java.util.Stack;
 /**
  * 二叉搜索树迭代器
  */
-public class L73binarySearchTreeIterator {
+public class L173binarySearchTreeIterator {
 
     Stack<TreeNode> stack = new Stack<>();
     TreeNode cur = null;
 
-    public L73binarySearchTreeIterator(TreeNode root) {
+    public L173binarySearchTreeIterator(TreeNode root) {
         this.cur = root;
     }
 

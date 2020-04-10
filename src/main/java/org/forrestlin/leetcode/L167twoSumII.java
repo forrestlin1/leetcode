@@ -2,7 +2,7 @@ package org.forrestlin.leetcode;
 /**
  * 两数之和 II - 输入有序数组
  * */
-public class L67twoSumII {
+public class L167twoSumII {
     public int[] twoSum(int[] numbers, int target) {
         int l = 0;
         int r = numbers.length - 1;

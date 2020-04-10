@@ -1,8 +1,5 @@
 package org.forrestlin.leetcode;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @program: leetcode
  * @description: 颜色分类
